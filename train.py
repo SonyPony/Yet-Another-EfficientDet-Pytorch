@@ -122,6 +122,7 @@ def train(opt):
     val_set = BarcodeDataset(
         root_dir=opt.data_path,
         set_name=params.val_set,
+        train_set=False,
         transform=transforms.Compose([Normalizer(mean=params.mean, std=params.std),
                                       Resizer(input_sizes[opt.compound_coef])])
     )
